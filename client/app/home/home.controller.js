@@ -1,6 +1,11 @@
-'use strict';
+(function() {
+  'use strict';
 
-angular.module('FudStoraj')
-  .controller('HomeCtrl', function ($scope) {
-    $scope.yeogurt = 'awesome';
-  });
+  angular.module('fudStoraj')
+    .controller('HomeController', HomeController);
+
+  function HomeController() {
+      var vm = this;
+      vm.test = 'awesome';
+  }
+}());

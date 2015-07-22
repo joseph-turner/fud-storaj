@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!--[if lte IE 8]><html class="lt-ie9 ng-app="FudStoraj" no-js" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--><html lang="en" ng-app="FudStoraj" class="no-js"><!--<![endif]-->
+<!--[if lte IE 8]><html class="lt-ie9 ng-app="fudStoraj" no-js" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" ng-app="fudStoraj" class="no-js"><!--<![endif]-->
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
@@ -21,6 +21,8 @@
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 
+    <base href="/">
+
     <!-- HTML5 and consolelog shims for IE8 support -->
     <!-- build:js(client) app/lt-ie9.js -->
     <!--[if lt IE 9]>
@@ -34,8 +36,29 @@
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <header class="o-header">
+      <nav class="m-main-nav">
+        <ul>
+          <li><a href="#" class="a-main-nav-link">Home</a></li>
+          <!-- <li><a href="#" class="a-main-nav-link">Calculator</a></li> -->
+          <!-- <li><a href="#" class="a-main-nav-link">Inventory</a></li> -->
+          <li><a href="#" class="a-main-nav-link">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
     <!-- Application loads here -->
-    <div id="app-wrapper" ng-view></div>
+    <div id="main" role="main" ng-view></div>
+
+
+    <footer class="o-footer">
+      <nav class="m-footer-nav">
+        <ul>
+          <li><a href="/docs/styleguide/index.html" data-bypass>Styleguide</a></li>
+          <li><a href="/docs/api/index.html" data-bypass>API</a></li>
+        </ul>
+      </nav>
+    </footer>
 
     <!-- build:js(client) app/global.js -->
       <!-- bower:js -->
@@ -43,14 +66,16 @@
       <script src="/bower_components/angular/angular.js"></script>
       <script src="/bower_components/angular-route/angular-route.js"></script>
       <script src="/bower_components/json3/lib/json3.js"></script>
+      <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+      <script src="/bower_components/angular-animate/angular-animate.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:js(client) app/main.js -->
-    <script src="/app/main.js"></script>
+    <!-- build:js(client) app/app.js -->
+    <script src="/app/app.js"></script>
     <!-- [injector:js] -->
+    <script src="/app/calculator/calculator.controller.js"></script>
     <script src="/app/home/home.controller.js"></script>
-    <script src="/app/home/home.js"></script>
     <!-- [endinjector] -->
     <!-- endbuild -->
   </body>

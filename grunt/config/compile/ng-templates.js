@@ -8,7 +8,7 @@ var taskConfig = function(grunt) {
   grunt.config.set('ngtemplates', {
     options: {
       // This should be the name of your main angular module
-      module: 'FudStoraj',
+      module: 'fudStoraj',
       htmlmin: {
         collapseBooleanAttributes: true,
         conservativeCollapse: true,
@@ -17,7 +17,7 @@ var taskConfig = function(grunt) {
         removeRedundantAttributes: true,
         collapseWhitespace: true
       },
-      usemin: 'app/main.js',
+      usemin: 'app/app.js',
       prefix: '/'
     },
     main: {

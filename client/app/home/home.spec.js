@@ -1,22 +1,21 @@
-'use strict';
+(function() {
+  'use strict';
 
-describe('Controller: HomeCtrl', function () {
+  describe('The HomeController', function () {
 
-  // load module that the controller is associated with
-  beforeEach(module('FudStoraj'));
+    // load module that the controller is associated with
+    beforeEach(module('fudStoraj'));
 
-  var HomeCtrl,
-    scope;
+    var HomeController;
 
-  // Setup controller and mock it's scope
-  beforeEach(inject(function ($controller, $rootScope) {
-    scope = $rootScope.$new();
-    HomeCtrl = $controller('HomeCtrl', {
-      $scope: scope
+    // Setup controller and mock it's scope
+    beforeEach(inject(function ($controller) {
+      HomeController = $controller('HomeController', {});
+      HomeController.test = 'test';
+    }));
+
+    it('should have a view model defined', function () {
+      expect(HomeController.test).to.equal('test');
     });
-  }));
-
-  it('should have scope defined', function () {
-    expect(scope.yeogurt).to.equal('awesome');
   });
-});
+}());

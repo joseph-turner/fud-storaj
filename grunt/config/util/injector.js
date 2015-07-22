@@ -23,10 +23,10 @@ var taskConfig = function(grunt) {
       files: {
         '<%= yeogurt.client %>/index.html': [
           '<%= yeogurt.client %>/app/**/*.js',
-          '!<%= yeogurt.client %>/app/main.js',
+          '!<%= yeogurt.client %>/app/app.js',
           '!<%= yeogurt.client %>/app/**/*.spec.js',
           '!<%= yeogurt.client %>/app/**/*.mock.js',
-          '!<%= yeogurt.client %>/scripts/main.js',
+          '!<%= yeogurt.client %>/scripts/app.js'
         ]
       }
     },
@@ -34,13 +34,16 @@ var taskConfig = function(grunt) {
     sass: {
       options: {
         transform: function(filePath) {
-          if ( filePath.indexOf('app')) {
+          grunt.log.writeln('Before ' + filePath);
+          if ( filePath.indexOf('app' > -1)) {
             filePath = filePath.replace('/client/', '../');
+            grunt.log.writeln('In 1 ' + filePath);
           } else {
-            var regPath = /\/client\/(styles\/)?/;
-            filePath = filePath.replace(regPath, '');
-            filePath = filePath.replace(/_/, '');
+            filePath = filePath.replace('/client/styles/', '');
+            grunt.log.writeln('In 2 ' + filePath);
           }
+            filePath = filePath.replace(/(\/)(_)([a-zA-z]+\.[A-Za-z]*)/, '$1$3');
+            grunt.log.writeln('After ' + filePath);
 
           return '@import \'' + filePath.slice(0, -5) + '\';';
         },

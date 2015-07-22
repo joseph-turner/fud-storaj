@@ -13,12 +13,12 @@
 
 // Injects all bower_component files automatically
 // bower:scss
+@import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
 // Injects all import files automatically
 // [injector]
-@import '../styles/atoms/_buttons';
-@import '../app/home/_home';
+@import '../styles/atoms/buttons';
 // [endinjector]
 
 .links a {

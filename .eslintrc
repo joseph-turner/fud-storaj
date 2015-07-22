@@ -1,0 +1,28 @@
+{
+  "env": {
+    "browser": true,
+    "jasmine": true,
+    "mocha": true,
+    "node": true,
+    "phantomjs": true
+  },
+  "globals": {
+    "angular": false,
+    "console": false,
+    //ngMock
+    "module": false,
+    "inject": false
+  },
+  "plugins": [
+    "angular",
+    "mocha",
+    "smells"
+  ],
+  "rules": {
+    "no-use-before-define": 0,
+    "quotes": [1, "single"]
+  },
+  "ignore": [
+    "**/*.spec.js"
+  ]
+}
